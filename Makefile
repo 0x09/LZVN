@@ -23,4 +23,6 @@ clean:
 	$(RM) *.o *.a lzvn
 
 install: lzvn
+	$(INSTALL) -m644 libFastCompression.h $(PREFIX)/include
+	$(INSTALL) -m644 libFastCompression.a $(PREFIX)/lib
 	$(INSTALL) lzvn $(PREFIX)/bin

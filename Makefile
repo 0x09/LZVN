@@ -11,7 +11,7 @@ PREFIX=/usr/local
 RANLIB=ranlib
 INSTALL=install
 ARFLAGS=cru
-CFLAGS=-g0 -O3 -ffast-math
+CFLAGS := -g0 -O3 -ffast-math $(CFLAGS)
 
 all: lzvn
 

@@ -11,7 +11,7 @@ PREFIX=/usr/local
 RANLIB=ranlib
 INSTALL=install
 ARFLAGS=cru
-CFLAGS=-g0 -arch arm64 -arch x86_64 -Ofast
+CFLAGS=-g0 -Ofast
 
 all: lzvn
 

@@ -121,6 +121,12 @@ int main(int argc, const char * argv[])
 #else
                                 fp = fopen (argv[3], "wb");
 #endif
+                                if (fp == NULL)
+                                {
+                                    printf("Error: Opening of %s failed... exiting\nAborted!\n", argv[3]);
+
+                                    return -1;
+                                }
 
                                 fwrite(uncompressedBuffer, outSize, 1, fp);
 

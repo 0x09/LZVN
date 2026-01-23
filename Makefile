@@ -8,8 +8,6 @@
 
 PREFIX=/usr/local
 
-AR=ar
-CC=gcc
 RANLIB=ranlib
 INSTALL=install
 ARFLAGS=cru

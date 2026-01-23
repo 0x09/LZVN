@@ -39,9 +39,20 @@
 #define OSSwapInt64 _byteswap_uint64
 #elif defined __APPLE__
 #include <libkern/OSByteOrder.h>
-#else
+#elif defined(__linux__) || defined(__FreeBSD__)
 #include <byteswap.h>
 #define OSSwapInt64 bswap_64
+#else
+#define OSSwapInt64(i) (\
+	((i)       & 0xFF) << 56 |\
+	((i) >>  8 & 0xFF) << 48 |\
+	((i) >> 16 & 0xFF) << 40 |\
+	((i) >> 24 & 0xFF) << 32 |\
+	((i) >> 32 & 0xFF) << 24 |\
+	((i) >> 40 & 0xFF) << 16 |\
+	((i) >> 48 & 0xFF) <<  8 |\
+	((i) >> 56 & 0xFF)        \
+)
 #endif
 
 #define DEBUG_STATE_ENABLED		0

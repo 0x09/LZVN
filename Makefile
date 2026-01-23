@@ -9,7 +9,7 @@ PREFIX ?= /usr/local
 RANLIB ?= ranlib
 INSTALL ?= install
 ARFLAGS ?= cru
-CFLAGS := -O3 -ffast-math $(CFLAGS)
+CFLAGS := -std=gnu99 -O3 -ffast-math $(CFLAGS)
 
 all: lzvn
 

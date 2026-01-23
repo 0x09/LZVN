@@ -13,15 +13,11 @@ CFLAGS := -g0 -O3 -ffast-math $(CFLAGS)
 
 all: lzvn
 
-.c.o:
-	$(CC) $(CFLAGS) -c $< -o $@
-
 libFastCompression.a: lzvn_encode.o lzvn_decode.o
 	$(AR) $(ARFLAGS) $@ lzvn_encode.o lzvn_decode.o
 	$(RANLIB) libFastCompression.a
 
-lzvn: lzvn.o libFastCompression.a
-	$(CC) $(CFLAGS) -o $@ lzvn.o -L. -lFastCompression
+lzvn: libFastCompression.a
 
 clean:
 	$(RM) *.o *.a lzvn

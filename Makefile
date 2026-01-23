@@ -2,8 +2,6 @@
 #
 # LZVN encode/decode routines
 #
-# Intel 64-bit (x86_64) version
-#
 ##
 
 PREFIX ?= /usr/local

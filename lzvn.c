@@ -100,7 +100,7 @@ int main(int argc, const char * argv[])
 
                             return -1;
                         } else {
-                            size_t outSize = lzvn_encode(uncompressedBuffer, workSpaceSize, (u_int8_t *)fileBuffer, (size_t)fileLength, workSpace);
+                            size_t outSize = lzvn_encode(uncompressedBuffer, workSpaceSize, fileBuffer, (size_t)fileLength, workSpace);
                             
                             printf("outSize: %ld\n", outSize);
                             

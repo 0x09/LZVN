@@ -24,7 +24,7 @@ lzvn: lzvn.o libFastCompression.a
 	$(CC) $(CFLAGS) -o $@ lzvn.o -L. -lFastCompression
 
 clean:
-	rm -f *.o *.a lzvn
+	$(RM) *.o *.a lzvn
 
 install: lzvn
 	$(INSTALL) lzvn $(PREFIX)/bin

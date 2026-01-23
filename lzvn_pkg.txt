@@ -1,3 +1,0 @@
-usr/include/FastCompression.h
-usr/lib/libFastCompression.a
-usr/bin/lzvn

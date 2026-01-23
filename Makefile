@@ -30,5 +30,5 @@ lzvn: lzvn.o libFastCompression.a
 clean:
 	rm -f *.o *.a lzvn
 
-install: lzvn.h
+install: lzvn
 	$(INSTALL) lzvn $(PREFIX)/bin

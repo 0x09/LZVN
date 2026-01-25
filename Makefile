@@ -26,3 +26,6 @@ install: lzvn
 	$(INSTALL) -m644 FastCompression.h $(PREFIX)/include
 	$(INSTALL) -m644 libFastCompression.a $(PREFIX)/lib
 	$(INSTALL) lzvn $(PREFIX)/bin
+
+uninstall:
+	$(RM) $(PREFIX)/include/FastCompression.h $(PREFIX)/lib/libFastCompression.a $(PREFIX)/bin/lzvn

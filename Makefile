@@ -28,9 +28,9 @@ clean:
 	$(RM) *.o *.a lzvn
 
 install: lzvn
-	$(INSTALL) -m644 FastCompression.h $(includedir)
-	$(INSTALL) -m644 libFastCompression.a $(libdir)
-	$(INSTALL) lzvn $(bindir)
+	$(INSTALL) -m644 FastCompression.h $(DESTDIR)$(includedir)
+	$(INSTALL) -m644 libFastCompression.a $(DESTDIR)$(libdir)
+	$(INSTALL) lzvn $(DESTDIR)$(bindir)
 
 uninstall:
-	$(RM) $(includedir)/FastCompression.h $(libdir)/libFastCompression.a $(bindir)/lzvn
+	$(RM) $(DESTDIR)$(includedir)/FastCompression.h $(DESTDIR)$(libdir)/libFastCompression.a $(DESTDIR)$(bindir)/lzvn

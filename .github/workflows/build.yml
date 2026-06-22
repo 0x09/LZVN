@@ -32,56 +32,72 @@ jobs:
     strategy:
       matrix:
         version: ['13.5', '14.4', '15.0']
+    defaults:
+      run:
+        shell: cpa.sh {0}
     steps:
       - uses: actions/checkout@v7
-      - name: Build in default configuration
+      - name: Start VM
         uses: cross-platform-actions/action@v1.2.0
         with:
           operating_system: freebsd
           architecture: x86-64
           version: ${{ matrix.version }}
-          run: |
-            sudo pkg update
-            sudo pkg install -y gmake
-            gmake
+      - name: Build in default configuration
+        run: |
+          sudo pkg update
+          sudo pkg install -y gmake
+          gmake
   build-openbsd:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: cpa.sh {0}
     steps:
       - uses: actions/checkout@v7
-      - name: Build
+      - name: Start VM
         uses: cross-platform-actions/action@v1.2.0
         with:
           operating_system: openbsd
           architecture: x86-64
           version: '7.9'
-          run: |
-            sudo pkg_add gmake
-            gmake
+      - name: Build
+        run: |
+          sudo pkg_add gmake
+          gmake
   build-netbsd:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         version: ['9.4', '10.1']
+    defaults:
+      run:
+        shell: cpa.sh {0}
     steps:
       - uses: actions/checkout@v7
-      - name: Build
+      - name: Start VM
         uses: cross-platform-actions/action@v1.2.0
         with:
           operating_system: netbsd
           architecture: x86-64
           version: ${{ matrix.version }}
-          run: |
-            sudo pkgin update
-            sudo pkgin -y install gmake
-            gmake
+      - name: Build
+        run: |
+          sudo pkgin update
+          sudo pkgin -y install gmake
+          gmake
   build-haiku:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: cpa.sh {0}
     steps:
       - uses: actions/checkout@v7
-      - name: Build
+      - name: Start VM
         uses: cross-platform-actions/action@v1.2.0
         with:
           operating_system: haiku
           architecture: x86-64
           version: r1beta5
-          run: make
+      - name: Build
+        run: make
